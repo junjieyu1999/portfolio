@@ -102,6 +102,9 @@
           status: 'Ongoing',
           palette: 'river',
           tone: 'var(--moss)',
+          image: 'aegirprofile.jpg',
+          imageAlt: 'Aegir Waterpolo players gathered at the poolside with their coach',
+          imagePos: '50% 58%',
           link: { label: 'Visit aegirwaterpolo.com', url: 'https://www.aegirwaterpolo.com/' },
           blurb: 'Moving the club’s payments online and using data to keep more students training with us.',
           summary: 'Aegir Waterpolo is a water polo club in Singapore that I co-own with a business partner. Ownership means weighing the perspectives of many stakeholders and meeting their needs as well as we can, while keeping the business growing.',
@@ -120,6 +123,9 @@
           status: 'Open since June 2026',
           palette: 'clay',
           tone: 'var(--clay)',
+          image: 'artprofile-web.jpg',
+          imageAlt: 'An artist at work among paintings laid out on a studio floor',
+          imagePos: '50% 72%',
           link: { label: 'Visit junjiestudio.com', url: 'https://junjiestudio.com' },
           blurb: 'Launching a monthly postcard club in January 2027, with ten people already on the waiting list.',
           summary: 'Junjie Studio is my own digital art studio. I disliked how exclusive and hidden away art can feel, so I built an online studio that visitors can walk through as if they were standing in a physical space. The studio opened in June 2026.',
@@ -392,8 +398,18 @@
   const S = SITE;
   const projects = S.projects;
 
-  function coverOf(p, animate) {
-    return '<div class="cover">' + strata(p.slug, S.palettes[p.palette], { animate: !!animate }) + '</div>';
+  function imgTag(src, alt, pos) {
+    return '<img class="cover-img" src="' + src + '" alt="' + alt + '"' +
+      (pos ? ' style="object-position:' + pos + '"' : '') + ' onerror="this.remove()">';
+  }
+
+  /* Cover for a project card. Uses the project's image when it has one,
+     otherwise the drawn artwork. natural keeps a wide banner at its own shape. */
+  function coverOf(p, animate, natural) {
+    const art = strata(p.slug, S.palettes[p.palette], { animate: !!animate });
+    if (!p.image) { return '<div class="cover">' + art + '</div>'; }
+    const ratio = natural && p.imageRatio ? ' style="aspect-ratio:' + p.imageRatio + '"' : '';
+    return '<div class="cover"' + ratio + '>' + art + imgTag(p.image, '', p.imagePos) + '</div>';
   }
 
   function caseCover(p) {
@@ -421,7 +437,8 @@
             '<a class="btn ghost" href="#/recommendation">Read my UN recommendation</a>' +
           '</div>' +
         '</div>' +
-        '<div class="arch">' + strata('arch-' + S.name, S.palettes.moss, { w: 600, h: 800, animate: true }) + '</div>' +
+        '<div class="arch">' + strata('arch-' + S.name, S.palettes.moss, { w: 600, h: 800 }) +
+          (S.photo ? imgTag(S.photo, S.photoAlt, '47% 0') : '') + '</div>' +
       '</section>' +
 
       '<section class="work" aria-labelledby="now-h">' +
@@ -429,7 +446,8 @@
         '<ul class="nowgrid">' +
           S.now.items.map(function (v) {
             return '<li><article class="card nowcard">' +
-              '<div class="cover" style="aspect-ratio:16 / 7">' + strata('now-' + v.slug, S.palettes[v.palette], {}) + '</div>' +
+              '<div class="cover" style="aspect-ratio:16 / 7">' + strata('now-' + v.slug, S.palettes[v.palette], {}) +
+                (v.image ? imgTag(v.image, '', v.imagePos) : '') + '</div>' +
               '<h3><a class="stretch" href="#/now">' + v.name + '</a></h3>' +
               '<p class="vmeta">' + v.role + ', ' + v.status + '</p>' +
               '<p class="blurb">' + v.blurb + '</p>' +
@@ -456,7 +474,7 @@
       '<section class="work" aria-labelledby="work-h">' +
         '<h2 id="work-h">Selected work</h2>' +
         '<article class="card featured">' +
-          coverOf(first) +
+          coverOf(first, false, true) +
           '<div>' +
             '<h3><a class="stretch" href="#/work/' + first.slug + '">' + first.title + '</a></h3>' +
             '<p>' + first.summary + '</p>' +
@@ -583,7 +601,8 @@
         '<p class="deck">' + N.intro + '</p>' +
         N.items.map(function (v) {
           return '<article class="venture" id="' + v.slug + '" style="--gc:' + v.tone + '">' +
-            '<div class="cover" style="aspect-ratio:21 / 6">' + strata('now-' + v.slug, S.palettes[v.palette], {}) + '</div>' +
+            '<div class="cover" style="aspect-ratio:21 / 9">' + strata('now-' + v.slug, S.palettes[v.palette], {}) +
+              (v.image ? imgTag(v.image, v.imageAlt, v.imagePos) : '') + '</div>' +
             '<header class="vhead"><h2>' + v.name + '</h2>' +
               '<p class="vmeta">' + v.role + (v.place ? ', ' + v.place : '') + ', ' + v.status + '</p></header>' +
             '<div class="vgrid">' +
