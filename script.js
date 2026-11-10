@@ -20,6 +20,7 @@
     intro:
       'I am a product-minded technology professional and an Information Systems student at Singapore Management University. I have delivered software and AI-enabled solutions across international development, government and private industry. Today I also co-own a water polo club and run my own digital art studio.',
 
+    avatar: 'smallprofile-web.jpg',
     photo: 'profilepic.jpg',
     photoAlt: 'Portrait of Yu Jun Jie in a tan jacket and striped shirt',
 
@@ -80,8 +81,9 @@
     ],
 
     contact: {
-      note: 'I am interested in product management, technology consulting, and AI and digital transformation work. The quickest way to reach me is email.',
+      note: 'I am interested in product management, technology consulting, and AI and digital transformation work. You can reach me by email or phone.',
       email: 'yujunjie1999@gmail.com',
+      phone: { display: '+65 9060 1533', href: '+6590601533' },
       links: [
         { label: 'LinkedIn', url: 'https://www.linkedin.com/in/yu-junjie' },
         { label: 'GitHub', url: 'https://github.com/junjieyu1999' }
@@ -293,6 +295,9 @@
       {
         slug: 'inventory-platform',
         place: 'Singapore',
+        image: 'suncosystemprofile-circle.png',
+        imageAlt: 'Sunco Systems logo',
+        imageFit: 'contain',
         title: 'Inventory platform',
         year: '2023',
         palette: 'clay',
@@ -404,8 +409,8 @@
   const S = SITE;
   const projects = S.projects;
 
-  function imgTag(src, alt, pos) {
-    return '<img class="cover-img" src="' + src + '" alt="' + alt + '"' +
+  function imgTag(src, alt, pos, fit) {
+    return '<img class="cover-img' + (fit ? ' contain' : '') + '" src="' + src + '" alt="' + alt + '"' +
       (pos ? ' style="object-position:' + pos + '"' : '') + ' onerror="this.remove()">';
   }
 
@@ -415,14 +420,14 @@
     const art = strata(p.slug, S.palettes[p.palette], { animate: !!animate });
     if (!p.image) { return '<div class="cover">' + art + '</div>'; }
     const ratio = natural && p.imageRatio ? ' style="aspect-ratio:' + p.imageRatio + '"' : '';
-    return '<div class="cover"' + ratio + '>' + art + imgTag(p.image, '', p.imagePos) + '</div>';
+    return '<div class="cover"' + ratio + '>' + art + imgTag(p.image, '', p.imagePos, p.imageFit === 'contain') + '</div>';
   }
 
   function caseCover(p) {
     const art = strata(p.slug, S.palettes[p.palette], { animate: false });
     if (!p.image) { return '<div class="cover">' + art + '</div>'; }
     return '<div class="cover" style="aspect-ratio:' + (p.imageRatio || '21 / 9') + '">' + art +
-      '<img class="cover-img" src="' + p.image + '" alt="' + p.imageAlt + '" onerror="this.remove()"></div>';
+      '<img class="cover-img' + (p.imageFit === 'contain' ? ' contain' : '') + '" src="' + p.image + '" alt="' + p.imageAlt + '" onerror="this.remove()"></div>';
   }
 
   function tagsOf(p) { return p.tags.join(', '); }
@@ -592,6 +597,7 @@
         '<h1>Let\'s talk</h1>' +
         '<div class="prose" style="margin-top:1.5rem"><p>' + c.note + '</p></div>' +
         '<a class="mail" href="mailto:' + c.email + '">' + c.email + '</a>' +
+        '<p class="phone-line"><a href="tel:' + c.phone.href + '">' + c.phone.display + '</a></p>' +
         '<ul class="contact-links">' +
           c.links.map(function (l) { return '<li><a href="' + l.url + '" target="_blank" rel="noopener">' + l.label + '</a></li>'; }).join('') +
         '</ul>' +
@@ -676,7 +682,8 @@
   function sidebarHTML() {
     return '' +
       '<a class="brand" href="#/" aria-label="' + S.name + ', home">' +
-        '<span class="mark">' + strata('mark-' + S.name, S.palettes.moss, { w: 120, h: 120 }) + '</span>' +
+        '<span class="mark">' + strata('mark-' + S.name, S.palettes.moss, { w: 120, h: 120 }) +
+          (S.avatar ? '<img src="' + S.avatar + '" alt="" width="260" height="260" onerror="this.remove()">' : '') + '</span>' +
         '<span><span class="brand-name">' + S.name + '</span><span class="brand-role">' + S.role + '</span></span>' +
       '</a>' +
       '<nav aria-label="Main">' +
@@ -695,6 +702,7 @@
       '</nav>' +
       '<div class="side-foot"><ul>' +
         '<li><a href="mailto:' + S.contact.email + '">Email</a></li>' +
+        '<li><a href="tel:' + S.contact.phone.href + '">Phone</a></li>' +
         S.contact.links.map(function (l) { return '<li><a href="' + l.url + '" target="_blank" rel="noopener">' + l.label + '</a></li>'; }).join('') +
       '</ul></div>';
   }
