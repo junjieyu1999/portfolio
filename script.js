@@ -29,9 +29,11 @@
       'Away from work, I have played water polo for Singapore and won gold at the SEA Games in 2017 and 2023. I also enjoy backpacking through unfamiliar regions and am teaching myself oil painting.'
     ],
     skills: [
-      { group: 'Technical', items: ['Python, Java, SQL', 'Power BI', 'Next.js and React'] },
-      { group: 'AI', items: ['Generative AI and LLMs', 'Prompt engineering', 'RAG and fine-tuning', 'Agentic AI'] },
-      { group: 'Business', items: ['Stakeholder management', 'Product lifecycle', 'Requirements gathering', 'Process optimisation'] },
+      { group: 'Technical', tone: 'var(--moss)', items: ['Python', 'Java', 'SQL', 'Power BI', 'Next.js', 'React'] },
+      { group: 'AI', tone: 'var(--ochre-ink)', items: ['Generative AI', 'Prompt engineering', 'LLMs', 'RAG', 'Fine-tuning', 'Agentic AI'] },
+      { group: 'Business', tone: 'var(--clay)', items: ['Stakeholder management', 'Product lifecycle', 'Requirements gathering', 'Process optimisation'] }
+    ],
+    background: [
       { group: 'Education', items: ['B.Sc. Information Systems, Singapore Management University (2022 to 2027)', 'Diploma in Bioengineering, Singapore Polytechnic (2017 to 2019)'] },
       { group: 'Awards', items: ['Singapore National Water Polo, SEA Games gold (2017, 2023)', 'SMU Yip Pin Xiu Sports Scholarship', 'Runner-up, MaritimeONE Digital Challenge'] },
       { group: 'Languages', items: ['English (fluent)', 'Mandarin (fluent)', 'Spanish (basic)'] }
@@ -40,6 +42,7 @@
     experience: [
       {
         period: 'Jan to May 2026',
+        place: 'Singapore',
         title: 'Product Manager',
         org: 'Final year capstone with Calibre Financial Advisory',
         summary: 'Led communication between the client and a multidisciplinary engineering team across the whole product lifecycle.',
@@ -52,6 +55,7 @@
       },
       {
         period: 'Aug 2025 to Jan 2026',
+        place: 'Copenhagen, Denmark',
         title: 'Software Engineer Intern',
         org: 'United Nations Development Programme (UNDP)',
         summary: 'Worked with international stakeholders to design software supporting sustainability and internal operations.',
@@ -63,6 +67,7 @@
       },
       {
         period: 'Feb to Jul 2023',
+        place: 'Singapore',
         title: 'Software Engineer Intern',
         org: 'Sunco Systems',
         summary: 'Worked with business users to understand operational pain points before building software to address them.',
@@ -92,10 +97,15 @@
       bark:  { c: ['#E4DCC8', '#C9BA98', '#A28F68', '#76664A', '#4A3F30', '#251F18'], sun: '#C08A2B' }
     },
 
-    /* Leave live or repo as '' to hide that button. Add a link when you have one. */
+    /* Leave live or repo as '' to hide that button. Add a link when you have one.
+       image is the cover shown on the case study page; leave it out to show the artwork instead. */
     projects: [
       {
         slug: 'advisorone',
+        place: 'Singapore',
+        image: 'calibreadvisoryprofile.png',
+        imageAlt: 'Calibre Advisory logo',
+        imageRatio: '1047 / 310',
         title: 'AdvisorOne',
         year: '2026',
         palette: 'moss',
@@ -134,6 +144,9 @@
       },
       {
         slug: 'satellite-service-inventory',
+        place: 'Copenhagen, Denmark',
+        image: 'UnitedNationsprofile.webp',
+        imageAlt: 'United Nations emblem',
         title: 'Satellite Service Inventory',
         year: '2025',
         palette: 'river',
@@ -166,6 +179,9 @@
       },
       {
         slug: 'operations-dashboards',
+        place: 'Copenhagen, Denmark',
+        image: 'UnitedNationsprofile.webp',
+        imageAlt: 'United Nations emblem',
         title: 'Operations dashboards',
         year: '2025',
         palette: 'ochre',
@@ -205,6 +221,7 @@
       },
       {
         slug: 'inventory-platform',
+        place: 'Singapore',
         title: 'Inventory platform',
         year: '2023',
         palette: 'clay',
@@ -319,6 +336,13 @@
     return '<div class="cover">' + strata(p.slug, S.palettes[p.palette], { animate: !!animate }) + '</div>';
   }
 
+  function caseCover(p) {
+    const art = strata(p.slug, S.palettes[p.palette], { animate: false });
+    if (!p.image) { return '<div class="cover">' + art + '</div>'; }
+    return '<div class="cover" style="aspect-ratio:' + (p.imageRatio || '21 / 9') + '">' + art +
+      '<img class="cover-img" src="' + p.image + '" alt="' + p.imageAlt + '" onerror="this.remove()"></div>';
+  }
+
   function tagsOf(p) { return p.tags.join(', '); }
 
   function homeView() {
@@ -367,6 +391,7 @@
       ['Role', p.role],
       ['Year', p.year],
       ['Organisation', p.org],
+      ['Location', p.place],
       ['Focus', p.focus]
     ].filter(function (f) { return f[1]; });
     return '' +
@@ -374,7 +399,7 @@
         '<a class="back" href="#/">All work</a>' +
         '<h1>' + p.title + '</h1>' +
         '<p class="deck">' + p.summary + '</p>' +
-        coverOf(p, true) +
+        caseCover(p) +
         '<dl class="facts">' +
           facts.map(function (f) { return '<div><dt>' + f[0] + '</dt><dd>' + f[1] + '</dd></div>'; }).join('') +
         '</dl>' +
@@ -399,19 +424,30 @@
       footer();
   }
 
+  function chipGroups(groups) {
+    return groups.map(function (g) {
+      return '<div class="skillgroup" style="--gc:' + g.tone + '"><h3>' + g.group + '</h3><ul class="chips">' +
+        g.items.map(function (i) { return '<li>' + i + '</li>'; }).join('') + '</ul></div>';
+    }).join('');
+  }
+
   function aboutView() {
     return '' +
       '<section class="page">' +
         '<h1>About</h1>' +
         '<div class="split">' +
           '<div class="prose">' + S.about.map(function (t) { return '<p>' + t + '</p>'; }).join('') + '</div>' +
-          '<div class="skills">' +
-            (S.photo ? '<div class="portrait"><img src="' + S.photo + '" alt="' + S.photoAlt + '" width="800" height="533"></div>' : '') +
-            S.skills.map(function (g) {
-              return '<h2>' + g.group + '</h2><ul>' + g.items.map(function (i) { return '<li>' + i + '</li>'; }).join('') + '</ul>';
-            }).join('') +
-          '</div>' +
+          (S.photo ? '<div class="portrait"><img src="' + S.photo + '" alt="' + S.photoAlt + '" width="800" height="533"></div>' : '') +
         '</div>' +
+        '<section class="glance" aria-labelledby="skills-h">' +
+          '<h2 id="skills-h">Skills at a glance</h2>' +
+          '<div class="skillgrid">' + chipGroups(S.skills) + '</div>' +
+        '</section>' +
+        '<section class="background" aria-label="Education, awards and languages">' +
+          S.background.map(function (g) {
+            return '<div><h3>' + g.group + '</h3><ul>' + g.items.map(function (i) { return '<li>' + i + '</li>'; }).join('') + '</ul></div>';
+          }).join('') +
+        '</section>' +
       '</section>' + footer();
   }
 
@@ -422,7 +458,7 @@
         '<ol class="timeline" style="list-style:none;padding:0">' +
           S.experience.map(function (j) {
             return '<li class="job">' +
-              '<p class="when" style="margin:0">' + j.period + '</p>' +
+              '<p class="when" style="margin:0">' + j.period + (j.place ? '<span class="where">' + j.place + '</span>' : '') + '</p>' +
               '<div><h2>' + j.title + '</h2><p class="org" style="margin-top:.1rem;font-family:inherit;font-size:1rem">' + j.org + '</p>' +
               '<p>' + j.summary + '</p>' +
               (j.points.length ? '<ul class="points">' + j.points.map(function (t) { return '<li>' + t + '</li>'; }).join('') + '</ul>' : '') +
