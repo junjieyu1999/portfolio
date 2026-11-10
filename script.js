@@ -20,6 +20,9 @@
     intro:
       'I am a product-minded technology professional who has delivered software, automation and AI-enabled solutions across international development, government and private industry. I translate stakeholder needs into scalable digital solutions.',
 
+    photo: 'profilepic.jpg',
+    photoAlt: 'Portrait of Yu Jun Jie in a tan jacket and striped shirt',
+
     about: [
       'I enjoy solving problems that do not have obvious answers. My work sits where people, business and technology meet. I have collaborated with international stakeholders at the United Nations and led product discussions between clients and developers.',
       'I am studying Information Systems at Singapore Management University, majoring in Business Analytics and Digital Cloud Solutions. Before that I completed a diploma in Bioengineering at Singapore Polytechnic.',
@@ -403,6 +406,7 @@
         '<div class="split">' +
           '<div class="prose">' + S.about.map(function (t) { return '<p>' + t + '</p>'; }).join('') + '</div>' +
           '<div class="skills">' +
+            (S.photo ? '<div class="portrait"><img src="' + S.photo + '" alt="' + S.photoAlt + '" width="800" height="533"></div>' : '') +
             S.skills.map(function (g) {
               return '<h2>' + g.group + '</h2><ul>' + g.items.map(function (i) { return '<li>' + i + '</li>'; }).join('') + '</ul>';
             }).join('') +
