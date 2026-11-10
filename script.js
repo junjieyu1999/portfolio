@@ -16,9 +16,9 @@
   const SITE = {
     name: 'Yu Jun Jie',
     role: 'Product management and technology consulting',
-    tagline: 'I turn what people and businesses need into software that works.',
+    tagline: 'I build products, grow businesses and make art.',
     intro:
-      'I am a product-minded technology professional who has delivered software, automation and AI-enabled solutions across international development, government and private industry. I translate stakeholder needs into scalable digital solutions.',
+      'I am a product-minded technology professional and an Information Systems student at Singapore Management University. I have delivered software and AI-enabled solutions across international development, government and private industry. Today I also co-own a water polo club and run my own digital art studio.',
 
     photo: 'profilepic.jpg',
     photoAlt: 'Portrait of Yu Jun Jie in a tan jacket and striped shirt',
@@ -56,6 +56,7 @@
       {
         period: 'Aug 2025 to Jan 2026',
         place: 'Copenhagen, Denmark',
+        link: { label: 'Read the recommendation letter', href: '#/recommendation' },
         title: 'Software Engineer Intern',
         org: 'United Nations Development Programme (UNDP)',
         summary: 'Worked with international stakeholders to design software supporting sustainability and internal operations.',
@@ -85,6 +86,65 @@
         { label: 'LinkedIn', url: 'https://www.linkedin.com/in/yu-junjie' },
         { label: 'GitHub', url: 'https://github.com/junjieyu1999' }
       ]
+    },
+
+    /* The "Working on now" page. Update the date and the lists as things change. */
+    now: {
+      updated: 'November 2026',
+      title: 'What I am working on now',
+      intro: 'Alongside my studies, I run two ventures: a water polo club and a digital art studio. Here is what each one needs from me at the moment.',
+      items: [
+        {
+          slug: 'aegir-waterpolo',
+          name: 'Aegir Waterpolo',
+          role: 'Co-owner',
+          place: 'Singapore',
+          status: 'Ongoing',
+          palette: 'river',
+          tone: 'var(--moss)',
+          link: { label: 'Visit aegirwaterpolo.com', url: 'https://www.aegirwaterpolo.com/' },
+          blurb: 'Moving the club’s payments online and using data to keep more students training with us.',
+          summary: 'Aegir Waterpolo is a water polo club in Singapore that I co-own with a business partner. Ownership means weighing the perspectives of many stakeholders and meeting their needs as well as we can, while keeping the business growing.',
+          roles: ['Coach', 'Coach mentor and quality assurance', 'Social media manager (video producer and editor)', 'Digital marketing', 'Data and business analyst'],
+          current: [
+            ['Digitalising payments', 'My business partner and I are moving the club’s payment processes online so that we can tackle student drop-off.'],
+            ['Keeping students longer', 'I am analysing when students are likely to stop attending, and designing incentives that encourage them to stay.'],
+            ['Reaching new players', 'I am growing the club’s presence on social media to attract new customers, both from our existing community and from the wider pool of talent in Singapore.']
+          ]
+        },
+        {
+          slug: 'yujunjie-studio',
+          name: 'Yujunjie Studio',
+          role: 'Founder and artist',
+          place: 'Online studio',
+          status: 'Launching January 2027',
+          palette: 'clay',
+          tone: 'var(--clay)',
+          link: null,
+          blurb: 'Launching a monthly postcard club in January 2027, with ten people already on the waiting list.',
+          summary: 'Yujunjie Studio is my own digital art studio. I disliked how exclusive and hidden away art can feel, so I built an online studio that visitors can walk through as if they were standing in a physical space.',
+          roles: ['Painter', 'Social media manager', 'Business development', 'Administration'],
+          current: [
+            ['A monthly postcard club', 'I am starting a snail mail postcard club on a monthly subscription. Each month, subscribers receive a printed copy of one of my artworks.'],
+            ['Places I have travelled to', 'Each postcard shows a place I have visited, painted in my style, with a short story and my recommendations for what to do there.'],
+            ['Logistics and numbers', 'I am working out domestic and international shipping, and calculating breakeven points and the return on my investment.'],
+            ['Waiting list', 'Ten people have already joined the waiting list ahead of the January launch.']
+          ]
+        }
+      ]
+    },
+
+    recommendation: {
+      pdf: 'JJ Recommendation letter.pdf',
+      preview: 'recommendation-letter-preview.png',
+      about: 'A reference from the United Nations Development Programme, written after my internship as a Software Engineer Intern in Copenhagen, from 1 August 2025 to 9 January 2026.',
+      quote: 'His ability to independently architect and deliver a production-ready solution was particularly impressive.',
+      quote2: 'Given his competence, professionalism, and strong work ethic, I am confident he will be a valuable asset to any team he joins.',
+      from: 'Tin Win Aung',
+      title: 'Software Development Specialist, Information & Technology Management',
+      org: 'United Nations Development Programme',
+      place: 'UN City, Copenhagen, Denmark',
+      summary: 'The letter highlights the Satellite Communication Service Inventory and Tracking Application I built. It replaced a fragmented, Excel-based process and now gives the team real-time visibility into global inventory and subscription statuses. It also describes my work across the full development lifecycle, from database design and data entry interfaces to a custom analytics dashboard.'
     },
 
     /* Colour sets used to draw each project's cover artwork.
@@ -345,20 +405,52 @@
 
   function tagsOf(p) { return p.tags.join(', '); }
 
+  function pdfUrl() { return encodeURI(S.recommendation.pdf); }
+
   function homeView() {
     const first = projects[0];
     const rest = projects.slice(1);
+    const R = S.recommendation;
     return '' +
       '<section class="hero" aria-labelledby="page-title">' +
         '<div>' +
           '<h1 id="page-title">' + S.tagline + '</h1>' +
           '<p class="lede">' + S.intro + '</p>' +
           '<div class="actions">' +
-            '<a class="btn" href="#/work/' + first.slug + '">Read the latest case study</a>' +
-            '<a class="btn ghost" href="#/about">About me</a>' +
+            '<a class="btn" href="#/now">See what I am working on</a>' +
+            '<a class="btn ghost" href="#/recommendation">Read my UN recommendation</a>' +
           '</div>' +
         '</div>' +
         '<div class="arch">' + strata('arch-' + S.name, S.palettes.moss, { w: 600, h: 800, animate: true }) + '</div>' +
+      '</section>' +
+
+      '<section class="work" aria-labelledby="now-h">' +
+        '<h2 id="now-h">' + S.now.title + '</h2>' +
+        '<ul class="nowgrid">' +
+          S.now.items.map(function (v) {
+            return '<li><article class="card nowcard">' +
+              '<div class="cover" style="aspect-ratio:16 / 7">' + strata('now-' + v.slug, S.palettes[v.palette], {}) + '</div>' +
+              '<h3><a class="stretch" href="#/now">' + v.name + '</a></h3>' +
+              '<p class="vmeta">' + v.role + ', ' + v.status + '</p>' +
+              '<p class="blurb">' + v.blurb + '</p>' +
+            '</article></li>';
+          }).join('') +
+        '</ul>' +
+      '</section>' +
+
+      '<section class="recband" aria-labelledby="rec-h">' +
+        '<div>' +
+          '<h2 id="rec-h">Recommended by the United Nations Development Programme</h2>' +
+          '<blockquote><p>' + R.quote + '</p></blockquote>' +
+          '<p class="cite">' + R.from + ', ' + R.title + '</p>' +
+          '<div class="actions">' +
+            '<a class="btn light" href="#/recommendation">Read the recommendation</a>' +
+            '<a class="btn ghost-light" href="' + pdfUrl() + '" target="_blank" rel="noopener">Open the letter as a PDF</a>' +
+          '</div>' +
+        '</div>' +
+        '<a class="letter-thumb" href="#/recommendation" aria-label="Read the recommendation letter">' +
+          '<img src="' + R.preview + '" alt="" width="910" height="1286">' +
+        '</a>' +
       '</section>' +
 
       '<section class="work" aria-labelledby="work-h">' +
@@ -462,6 +554,7 @@
               '<div><h2>' + j.title + '</h2><p class="org" style="margin-top:.1rem;font-family:inherit;font-size:1rem">' + j.org + '</p>' +
               '<p>' + j.summary + '</p>' +
               (j.points.length ? '<ul class="points">' + j.points.map(function (t) { return '<li>' + t + '</li>'; }).join('') + '</ul>' : '') +
+              (j.link ? '<p class="inline-link"><a href="' + j.link.href + '">' + j.link.label + '</a></p>' : '') +
               '</div></li>';
           }).join('') +
         '</ol>' +
@@ -481,6 +574,59 @@
       '</section>' + footer();
   }
 
+  function nowView() {
+    const N = S.now;
+    return '' +
+      '<section class="page nowpage">' +
+        '<h1>' + N.title + '</h1>' +
+        '<p class="updated">Last updated ' + N.updated + '</p>' +
+        '<p class="deck">' + N.intro + '</p>' +
+        N.items.map(function (v) {
+          return '<article class="venture" id="' + v.slug + '" style="--gc:' + v.tone + '">' +
+            '<div class="cover" style="aspect-ratio:21 / 6">' + strata('now-' + v.slug, S.palettes[v.palette], {}) + '</div>' +
+            '<header class="vhead"><h2>' + v.name + '</h2>' +
+              '<p class="vmeta">' + v.role + (v.place ? ', ' + v.place : '') + ', ' + v.status + '</p></header>' +
+            '<div class="vgrid">' +
+              '<div class="vabout">' +
+                '<p class="vsummary">' + v.summary + '</p>' +
+                '<h3>My roles</h3>' +
+                '<ul class="chips">' + v.roles.map(function (r) { return '<li>' + r + '</li>'; }).join('') + '</ul>' +
+                (v.link ? '<div class="actions"><a class="btn ghost" href="' + v.link.url + '" target="_blank" rel="noopener">' + v.link.label + '</a></div>' : '') +
+              '</div>' +
+              '<div class="vnow"><h3>Right now</h3><ul class="points">' +
+                v.current.map(function (c) { return '<li><strong>' + c[0] + '.</strong> ' + c[1] + '</li>'; }).join('') +
+              '</ul></div>' +
+            '</div>' +
+          '</article>';
+        }).join('') +
+      '</section>' + footer();
+  }
+
+  function recView() {
+    const R = S.recommendation;
+    return '' +
+      '<section class="page recpage">' +
+        '<h1>Recommendation from the United Nations</h1>' +
+        '<p class="deck">' + R.about + '</p>' +
+        '<div class="recgrid">' +
+          '<div class="recmain">' +
+            '<blockquote class="bigquote"><p>' + R.quote + '</p></blockquote>' +
+            '<p class="cite"><strong>' + R.from + '</strong><br>' + R.title + '<br>' + R.org + ', ' + R.place + '</p>' +
+            '<div class="prose"><p>' + R.summary + '</p></div>' +
+            '<blockquote class="smallquote"><p>' + R.quote2 + '</p></blockquote>' +
+            '<div class="actions"><a class="btn" href="' + pdfUrl() + '" target="_blank" rel="noopener">Open the full letter (PDF)</a>' +
+            '<a class="btn ghost" href="#/work/satellite-service-inventory">See the project it describes</a></div>' +
+          '</div>' +
+          '<div class="recletter">' +
+            '<a href="' + pdfUrl() + '" target="_blank" rel="noopener">' +
+              '<img src="' + R.preview + '" alt="First page of the recommendation letter from the United Nations Development Programme" width="910" height="1286">' +
+            '</a>' +
+            '<p class="caption">Select the letter to open the full PDF.</p>' +
+          '</div>' +
+        '</div>' +
+      '</section>' + footer();
+  }
+
   function notFoundView() {
     return '<section class="page"><h1>That page does not exist</h1>' +
       '<div class="actions"><a class="btn" href="#/">Back to the home page</a></div></section>';
@@ -495,8 +641,10 @@
   ------------------------------------------------------------- */
   const navItems = [
     { key: 'home', label: 'Home', href: '#/' },
+    { key: 'now', label: 'Working on now', href: '#/now' },
     { key: 'about', label: 'About', href: '#/about' },
     { key: 'experience', label: 'Experience', href: '#/experience' },
+    { key: 'recommendation', label: 'UN recommendation', href: '#/recommendation' },
     { key: 'contact', label: 'Contact', href: '#/contact' }
   ];
 
@@ -570,6 +718,10 @@
 
     if (!page || (page === 'work' && !slug)) {
       html = homeView(); title = S.name + ' | ' + S.role; key = 'home';
+    } else if (page === 'now') {
+      html = nowView(); title = S.now.title + ' | ' + S.name; key = 'now';
+    } else if (page === 'recommendation') {
+      html = recView(); title = 'UN recommendation | ' + S.name; key = 'recommendation';
     } else if (page === 'about') {
       html = aboutView(); title = 'About | ' + S.name; key = 'about';
     } else if (page === 'experience') {
