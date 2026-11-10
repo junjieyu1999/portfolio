@@ -113,8 +113,8 @@
           ]
         },
         {
-          slug: 'yujunjie-studio',
-          name: 'Yujunjie Studio',
+          slug: 'Junjie-studio',
+          name: 'Junjie Studio',
           role: 'Founder and artist',
           place: 'Online studio',
           status: 'Open since June 2026',
@@ -122,7 +122,7 @@
           tone: 'var(--clay)',
           link: { label: 'Visit junjiestudio.com', url: 'https://junjiestudio.com' },
           blurb: 'Launching a monthly postcard club in January 2027, with ten people already on the waiting list.',
-          summary: 'Yujunjie Studio is my own digital art studio. I disliked how exclusive and hidden away art can feel, so I built an online studio that visitors can walk through as if they were standing in a physical space. The studio opened in June 2026.',
+          summary: 'Junjie Studio is my own digital art studio. I disliked how exclusive and hidden away art can feel, so I built an online studio that visitors can walk through as if they were standing in a physical space. The studio opened in June 2026.',
           roles: ['Painter', 'Social media manager', 'Business development', 'Administration'],
           current: [
             ['A monthly postcard club', 'I am starting a snail mail postcard club on a monthly subscription. Each month, subscribers receive a printed copy of one of my artworks.'],
