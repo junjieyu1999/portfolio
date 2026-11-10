@@ -14,6 +14,7 @@
   --moss-deep: #3c5340;
   --ochre: #c08a2b;
   --ochre-ink: #7a5210;
+  --clay: #8a4a32;
   --line: rgba(35, 31, 26, 0.2);
   --side-text: #e3e6d8;
   --side-muted: #a7af9d;
@@ -316,13 +317,28 @@ h1:focus { outline: none; }
 @media (max-width: 55rem) { .split { grid-template-columns: 1fr; } }
 
 .portrait {
-  aspect-ratio: 3 / 4; max-width: 17rem; margin-bottom: 2.25rem;
+  aspect-ratio: 3 / 4; width: 100%; max-width: 17rem;
   border-radius: 999px 999px 0 0; overflow: hidden; background: var(--moss-deep);
 }
 .portrait img { width: 100%; height: 100%; object-fit: cover; object-position: 47% 0; display: block; }
-.skills h2 { font-size: 1.15rem; }
-.skills ul { margin: .5rem 0 1.75rem; }
-.skills li { padding: .4rem 0; border-bottom: 1px solid var(--line); }
+.cover-img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block; }
+
+/* Skills at a glance */
+.glance { margin-top: 4rem; }
+.glance > h2 { font-size: clamp(1.5rem, 2.6vw, 1.9rem); }
+.skillgrid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.75rem 2.25rem; margin-top: 1.25rem; }
+.skillgroup { border-top: 3px solid var(--gc); padding-top: .85rem; }
+.skillgroup h3 { font-size: 1.1rem; }
+.chips { display: flex; flex-wrap: wrap; gap: .5rem; margin-top: .85rem; }
+.chips li { padding: .3rem .75rem; border: 1.5px solid var(--gc); border-radius: 4px; font-size: .9375rem; line-height: 1.35; }
+
+.background { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 2rem 2.25rem; margin-top: 3.25rem; }
+.background h3 { font-size: 1.1rem; }
+.background ul { margin-top: .6rem; }
+.background li { padding: .5rem 0; border-bottom: 1px solid var(--line); font-size: .9375rem; line-height: 1.4; }
+@media (max-width: 55rem) {
+  .skillgrid, .background { grid-template-columns: 1fr; }
+}
 
 .timeline { margin-top: 2.5rem; }
 .job {
@@ -331,6 +347,7 @@ h1:focus { outline: none; }
 }
 .timeline > li:last-child .job { border-bottom: 1px solid var(--line); }
 .job .when { color: var(--muted); padding-top: .25rem; }
+.job .where { display: block; margin-top: .15rem; font-size: .9375rem; }
 .job h2 { font-size: 1.45rem; }
 .job .org { color: var(--moss-deep); font-weight: 500; margin-top: .1rem; }
 .job p { margin-top: .8rem; font-family: var(--font-read); font-size: 1.1rem; line-height: 1.65; max-width: 38rem; }
