@@ -208,7 +208,7 @@ h1:focus { outline: none; }
 }
 .lede { margin-top: 1.5rem; max-width: 34rem; font-family: var(--font-read); font-size: 1.25rem; line-height: 1.6; }
 .arch {
-  aspect-ratio: 3 / 4; overflow: hidden; background: var(--moss-deep);
+  position: relative; aspect-ratio: 3 / 4; overflow: hidden; background: var(--moss-deep);
   border-radius: 999px 999px 0 0;
 }
 @media (max-width: 55rem) {
