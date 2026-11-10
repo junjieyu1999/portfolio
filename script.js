@@ -52,7 +52,7 @@
       },
       {
         period: 'Aug 2025 to Jan 2026',
-        title: 'Software Developer Intern',
+        title: 'Software Engineer Intern',
         org: 'United Nations Development Programme (UNDP)',
         summary: 'Worked with international stakeholders to design software supporting sustainability and internal operations.',
         points: [
@@ -63,7 +63,7 @@
       },
       {
         period: 'Feb to Jul 2023',
-        title: 'Software Developer Intern',
+        title: 'Software Engineer Intern',
         org: 'Sunco Systems',
         summary: 'Worked with business users to understand operational pain points before building software to address them.',
         points: [
@@ -139,7 +139,7 @@
         palette: 'river',
         summary: 'An interactive system that visualises Starlink satellite coverage and capabilities to support operational planning at the UNDP.',
         tags: ['Data visualisation', 'International development'],
-        role: 'Software Developer Intern',
+        role: 'Software Engineer Intern',
         org: 'United Nations Development Programme (UNDP)',
         focus: 'Data visualisation, operational planning',
         live: '',
@@ -171,7 +171,7 @@
         palette: 'ochre',
         summary: 'Power BI dashboards and supporting software that gave UNDP stakeholders clearer visibility into operational performance.',
         tags: ['Dashboards', 'Sustainability'],
-        role: 'Software Developer Intern',
+        role: 'Software Engineer Intern',
         org: 'United Nations Development Programme (UNDP)',
         focus: 'Power BI, IoT data, UML',
         live: '',
@@ -210,7 +210,7 @@
         palette: 'clay',
         summary: 'An inventory platform and workflow automations for Sunco Systems that improved stock visibility and reduced waste.',
         tags: ['Inventory', 'Automation'],
-        role: 'Software Developer Intern',
+        role: 'Software Engineer Intern',
         org: 'Sunco Systems',
         focus: 'Inventory systems, automation',
         live: '',
