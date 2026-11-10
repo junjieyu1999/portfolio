@@ -14,53 +14,68 @@
      1. Your content (edit this part)
   ------------------------------------------------------------- */
   const SITE = {
-    name: 'Your Name',
-    role: 'Frontend designer and developer',
-    tagline: 'I design and build calm, durable interfaces for the web.',
+    name: 'Yu Jun Jie',
+    role: 'Product management and technology consulting',
+    tagline: 'I turn what people and businesses need into software that works.',
     intro:
-      'I work where design and code meet: type, layout, accessibility and the small details that make a product feel considered. These are a few projects I am proud of.',
+      'I am a product-minded technology professional who has delivered software, automation and AI-enabled solutions across international development, government and private industry. I translate stakeholder needs into scalable digital solutions.',
 
     about: [
-      'I am a frontend designer and developer with a habit of starting from the materials. Before I open a design tool, I want to know who will use the thing, where they will be, and what they are carrying with them.',
-      'My work spans design systems, data-heavy dashboards and small, careful marketing sites. I like projects where the constraints are real: slow connections, bright sunlight, tired eyes, strict accessibility requirements.',
-      'Outside of work I garden badly, throw pots slightly better, and keep a notebook of typefaces I have seen on shopfronts.'
+      'I enjoy solving problems that do not have obvious answers. My work sits where people, business and technology meet. I have collaborated with international stakeholders at the United Nations and led product discussions between clients and developers.',
+      'I am studying Information Systems at Singapore Management University, majoring in Business Analytics and Digital Cloud Solutions. Before that I completed a diploma in Bioengineering at Singapore Polytechnic.',
+      'Away from work, I have played water polo for Singapore and won gold at the SEA Games in 2017 and 2023. I also enjoy backpacking through unfamiliar regions and am teaching myself oil painting.'
     ],
     skills: [
-      { group: 'Design', items: ['Interface and visual design', 'Design systems and tokens', 'Prototyping and user research', 'Typography and layout'] },
-      { group: 'Engineering', items: ['HTML, CSS and JavaScript', 'TypeScript, React, Vue, Svelte', 'Accessibility (WCAG 2.2)', 'Performance and offline-first apps'] },
-      { group: 'Practice', items: ['Workshops and critique', 'Documentation', 'Mentoring'] }
+      { group: 'Technical', items: ['Python, Java, SQL', 'Power BI', 'Next.js and React'] },
+      { group: 'AI', items: ['Generative AI and LLMs', 'Prompt engineering', 'RAG and fine-tuning', 'Agentic AI'] },
+      { group: 'Business', items: ['Stakeholder management', 'Product lifecycle', 'Requirements gathering', 'Process optimisation'] },
+      { group: 'Education', items: ['B.Sc. Information Systems, Singapore Management University (2022 to 2027)', 'Diploma in Bioengineering, Singapore Polytechnic (2017 to 2019)'] },
+      { group: 'Awards', items: ['Singapore National Water Polo, SEA Games gold (2017, 2023)', 'SMU Yip Pin Xiu Sports Scholarship', 'Runner-up, MaritimeONE Digital Challenge'] },
+      { group: 'Languages', items: ['English (fluent)', 'Mandarin (fluent)', 'Spanish (basic)'] }
     ],
 
     experience: [
       {
-        period: '2023 to now',
-        title: 'Senior frontend designer',
-        org: 'Company Name',
-        summary: 'Lead design and frontend for the core product, working with a team of engineers and a researcher.',
-        points: ['Built and maintain the company design system used across four products', 'Introduced accessibility reviews to every release']
+        period: 'Jan to May 2026',
+        title: 'Product Manager',
+        org: 'Final year capstone with Calibre Financial Advisory',
+        summary: 'Led communication between the client and a multidisciplinary engineering team across the whole product lifecycle.',
+        points: [
+          'Turned stakeholder discussions into user stories, product requirements and technical deliverables',
+          'Prioritised features by balancing user value, technical feasibility and project timelines',
+          'Presented iterative demos and managed stakeholder expectations',
+          'Selected by the project sponsor to continue supporting future development and to mentor the project teams that followed'
+        ]
       },
       {
-        period: '2020 to 2023',
-        title: 'Frontend developer',
-        org: 'Studio Name',
-        summary: 'Built websites and web apps for clients in education, culture and the public sector.',
-        points: ['Shipped more than twenty client projects from first sketch to launch', 'Set up the studio component library and starter templates']
+        period: 'Aug 2025 to Jan 2026',
+        title: 'Software Developer Intern',
+        org: 'United Nations Development Programme (UNDP)',
+        summary: 'Worked with international stakeholders to design software supporting sustainability and internal operations.',
+        points: [
+          'Translated business requirements into functional specifications and UML',
+          'Designed stakeholder dashboards in Power BI that improved visibility into operational performance',
+          'Supported IoT data analysis and full software development lifecycle delivery'
+        ]
       },
       {
-        period: '2018 to 2020',
-        title: 'Junior designer',
-        org: 'Agency Name',
-        summary: 'Designed interfaces and prototypes, and learned to code them myself.',
-        points: []
+        period: 'Feb to Jul 2023',
+        title: 'Software Developer Intern',
+        org: 'Sunco Systems',
+        summary: 'Worked with business users to understand operational pain points before building software to address them.',
+        points: [
+          'Designed an inventory platform that improved stock visibility and reduced waste',
+          'Developed automation for repetitive workflows, reducing manual effort'
+        ]
       }
     ],
 
     contact: {
-      note: 'I am open to freelance projects and full-time roles. The quickest way to reach me is email.',
-      email: 'hello@example.com',
+      note: 'I am interested in product management, technology consulting, and AI and digital transformation work. The quickest way to reach me is email.',
+      email: 'yujunjie1999@gmail.com',
       links: [
-        { label: 'GitHub', url: 'https://github.com/your-username' },
-        { label: 'LinkedIn', url: 'https://www.linkedin.com/in/your-username' }
+        { label: 'LinkedIn', url: 'https://www.linkedin.com/in/yu-junjie' },
+        { label: 'GitHub', url: 'https://github.com/junjieyu1999' }
       ]
     },
 
@@ -74,199 +89,145 @@
       bark:  { c: ['#E4DCC8', '#C9BA98', '#A28F68', '#76664A', '#4A3F30', '#251F18'], sun: '#C08A2B' }
     },
 
+    /* Leave live or repo as '' to hide that button. Add a link when you have one. */
     projects: [
       {
-        slug: 'fieldnotes',
-        title: 'Fieldnotes',
+        slug: 'advisorone',
+        title: 'AdvisorOne',
         year: '2026',
         palette: 'moss',
-        summary: 'An offline-first notebook that lets ecologists log sightings, photos and soil readings from places with no signal.',
-        tags: ['Offline-first app', 'Research tools'],
-        role: 'Lead designer and frontend developer',
-        team: 'Team of four',
-        stack: 'Vue, TypeScript, IndexedDB',
-        live: 'https://example.com',
-        repo: 'https://github.com/your-username/fieldnotes',
-        story: [
-          {
-            heading: 'The problem',
-            body: [
-              'Field researchers were keeping paper notebooks and retyping them into spreadsheets weeks later. Photos lived on one phone, GPS pins on another, and entries often lost their location along the way.',
-              'The team wanted one place to capture an observation in under ten seconds, even when the nearest mobile mast was an hour away.'
-            ]
-          },
-          {
-            heading: 'What I built',
-            body: [
-              'A single-screen capture flow made for gloves and glare: large targets, high-contrast type and one-handed reach. Everything saves to the device first and syncs in the background when a connection returns.',
-              'Before writing production code I prototyped the capture screen with five researchers in a nature reserve. That session moved the record button from the top of the screen to the bottom, and cut the form down to the four fields people actually filled in.'
-            ],
-            points: [
-              'Works fully offline, with background sync and clear sync status',
-              'Glove-friendly touch targets and a sunlight mode with a contrast ratio above 7:1',
-              'Exports to the spreadsheet format the lab already used'
-            ]
-          },
-          {
-            heading: 'What changed',
-            body: [
-              'In the pilot season, researchers logged entries on site instead of at the end of the day, and the retyping step disappeared from the team\'s workflow. The lab now uses Fieldnotes on every field trip.'
-            ]
-          }
-        ]
-      },
-      {
-        slug: 'terrace',
-        title: 'Terrace design system',
-        year: '2025',
-        palette: 'ochre',
-        summary: 'A shared component library and set of design tokens for a produce marketplace with web, kiosk and driver apps.',
-        tags: ['Design system', 'Accessibility'],
-        role: 'Design system lead',
-        team: 'Two designers, three engineers',
-        stack: 'Figma, React, Storybook, CSS custom properties',
-        live: 'https://example.com',
+        summary: 'An AI-powered financial advisory platform designed to improve advisor workflow and give managers better insight.',
+        tags: ['AI product', 'Financial services'],
+        role: 'Product Manager',
+        org: 'Calibre Financial Advisory (final year capstone)',
+        focus: 'Product management, AI',
+        live: '',
         repo: '',
         story: [
           {
-            heading: 'The problem',
+            heading: 'The brief',
             body: [
-              'Three products had grown three slightly different buttons, five greys and no shared idea of what an error looked like. Each change meant three pull requests and an argument.'
+              'AdvisorOne was my final year capstone with Calibre Financial Advisory: an AI-enabled platform meant to improve how advisors work and to give managers better insight. As product manager, I led product discovery and kept the client and a multidisciplinary engineering team talking to each other throughout.'
             ]
           },
           {
-            heading: 'What I built',
+            heading: 'What I did',
             body: [
-              'I started with an audit of every component in production, grouped by what it was for rather than how it looked. From that came a small set of tokens for colour, type, spacing and motion, and a library of thirty components documented in Storybook with usage guidance and accessibility notes.',
-              'Every component ships with keyboard behaviour and screen reader labels already tested, so teams get accessibility by default instead of as a late fix.'
+              'I ran stakeholder discussions and turned business goals into user stories, product requirements and technical deliverables. I prioritised features by weighing user value, technical feasibility and project timelines, and presented working demos at each iteration to keep expectations aligned.'
             ],
             points: [
-              'Tokens published once and consumed by web, kiosk and native apps',
-              'Component documentation with do and do-not examples',
-              'A contribution guide so product teams can propose additions'
+              'Led product discovery and stakeholder communication',
+              'Translated business needs into requirements and feature priorities',
+              'Presented iterative demonstrations to the client'
             ]
           },
           {
-            heading: 'What changed',
+            heading: 'What came of it',
             body: [
-              'Product teams stopped redrawing common patterns and started composing them. The audit also gave the company its first accessibility baseline, which the team has improved release by release.'
+              'The project sponsor selected me to continue supporting future development and to mentor the project teams that followed.'
             ]
           }
         ]
       },
       {
-        slug: 'tidewatch',
-        title: 'Tidewatch',
+        slug: 'satellite-service-inventory',
+        title: 'Satellite Service Inventory',
         year: '2025',
         palette: 'river',
-        summary: 'A monitoring dashboard that turns coastal sensor data into plain-language alerts for harbour staff.',
-        tags: ['Data visualisation', 'Dashboard'],
-        role: 'Product designer and frontend developer',
-        team: 'Solo, with a data engineer',
-        stack: 'SvelteKit, D3, REST API',
-        live: 'https://example.com',
-        repo: 'https://github.com/your-username/tidewatch',
+        summary: 'An interactive system that visualises Starlink satellite coverage and capabilities to support operational planning at the UNDP.',
+        tags: ['Data visualisation', 'International development'],
+        role: 'Software Developer Intern',
+        org: 'United Nations Development Programme (UNDP)',
+        focus: 'Data visualisation, operational planning',
+        live: '',
+        repo: '',
         story: [
           {
-            heading: 'The problem',
+            heading: 'The context',
             body: [
-              'Harbour staff had access to rich sensor data on water level, wind and wave height, but it lived in charts built for scientists. During a storm warning, they needed to know one thing: is it safe to move the vessel or not.'
+              'UNDP works in dynamic geopolitical environments, where operational planning depends on good information. This project gave planners a clearer view of satellite service coverage and capabilities.'
             ]
           },
           {
             heading: 'What I built',
             body: [
-              'The dashboard leads with a status for each berth, written in plain language and backed by the underlying numbers one click away. Charts are quiet by default and only draw attention when a reading crosses a threshold that staff themselves helped set.',
-              'I designed the colour scale so that status never relies on colour alone, and tested the charts with a colour-blindness simulator at every step.'
+              'I developed an interactive system that visualises Starlink satellite coverage and capabilities, so planning decisions can be based on data. I worked with international stakeholders throughout development.'
             ],
             points: [
-              'Status first, detail on demand',
-              'Thresholds configured with harbour staff, not assumed',
-              'Readable on a wall-mounted screen from across the room'
-            ]
-          },
-          {
-            heading: 'What changed',
-            body: [
-              'The harbour office now keeps Tidewatch open on a wall screen during storm season and uses the detail view in morning briefings.'
+              'Interactive visualisation of coverage and capabilities',
+              'Built to support data-driven operational planning',
+              'Developed in collaboration with stakeholders from different countries'
             ]
           }
         ]
       },
       {
-        slug: 'kiln',
-        title: 'Kiln booking site',
-        year: '2024',
+        slug: 'operations-dashboards',
+        title: 'Operations dashboards',
+        year: '2025',
+        palette: 'ochre',
+        summary: 'Power BI dashboards and supporting software that gave UNDP stakeholders clearer visibility into operational performance.',
+        tags: ['Dashboards', 'Sustainability'],
+        role: 'Software Developer Intern',
+        org: 'United Nations Development Programme (UNDP)',
+        focus: 'Power BI, IoT data, UML',
+        live: '',
+        repo: '',
+        story: [
+          {
+            heading: 'The context',
+            body: [
+              'Part of my internship at UNDP was designing software that supported sustainability and internal operations, in collaboration with international stakeholders.'
+            ]
+          },
+          {
+            heading: 'What I did',
+            body: [
+              'I translated business requirements into functional specifications and UML, designed stakeholder dashboards in Power BI, and supported IoT data analysis and delivery across the full software development lifecycle.'
+            ],
+            points: [
+              'Functional specifications and UML drawn from business requirements',
+              'Stakeholder dashboards in Power BI',
+              'Support for IoT data analysis',
+              'Delivery across the full software development lifecycle'
+            ]
+          },
+          {
+            heading: 'What changed',
+            body: [
+              'The dashboards improved visibility into operational performance for the stakeholders who used them.'
+            ]
+          }
+        ]
+      },
+      {
+        slug: 'inventory-platform',
+        title: 'Inventory platform',
+        year: '2023',
         palette: 'clay',
-        summary: 'A small, fast website and booking flow for a community ceramics studio, built to be edited by non-developers.',
-        tags: ['Marketing site', 'Booking flow'],
-        role: 'Designer and developer',
-        team: 'Solo',
-        stack: 'Astro, vanilla JavaScript, Markdown content',
-        live: 'https://example.com',
-        repo: 'https://github.com/your-username/kiln',
+        summary: 'An inventory platform and workflow automations for Sunco Systems that improved stock visibility and reduced waste.',
+        tags: ['Inventory', 'Automation'],
+        role: 'Software Developer Intern',
+        org: 'Sunco Systems',
+        focus: 'Inventory systems, automation',
+        live: '',
+        repo: '',
         story: [
           {
-            heading: 'The problem',
+            heading: 'Starting with the users',
             body: [
-              'The studio took bookings by direct message and kept class times in a shared spreadsheet. Students missed sessions, and the owner spent her evenings answering the same five questions.'
+              'Before designing anything, I partnered with business users to understand their operational pain points.'
             ]
           },
           {
             heading: 'What I built',
             body: [
-              'A warm, photography-led site with a booking flow that fits on one screen. Classes, prices and dates live in plain Markdown files, so the owner can update them herself without touching code.',
-              'The whole site weighs less than most hero images, and works well on the older phones many students use.'
+              'The result was an inventory platform that improved stock visibility and reduced waste. I also identified repetitive workflows and developed automation that reduced manual effort and improved operational efficiency.'
             ],
             points: [
-              'Content managed in simple files, with a short guide for the owner',
-              'Booking confirmation by email, with calendar attachments',
-              'Pages load in well under a second on a slow connection'
-            ]
-          },
-          {
-            heading: 'What changed',
-            body: [
-              'Evening message traffic dropped sharply, and the owner has added two new classes since launch using only the guide I wrote.'
-            ]
-          }
-        ]
-      },
-      {
-        slug: 'ledgerleaf',
-        title: 'Ledgerleaf',
-        year: '2024',
-        palette: 'bark',
-        summary: 'A personal budgeting tool that shows where the month is going without scolding anyone about it.',
-        tags: ['Personal finance', 'Charts'],
-        role: 'Designer and frontend developer',
-        team: 'Side project',
-        stack: 'React, Zustand, Recharts',
-        live: 'https://example.com',
-        repo: 'https://github.com/your-username/ledgerleaf',
-        story: [
-          {
-            heading: 'The problem',
-            body: [
-              'Most budgeting apps felt like report cards. I wanted something I would open willingly, that showed the shape of a month at a glance and left the judgement to me.'
-            ]
-          },
-          {
-            heading: 'What I built',
-            body: [
-              'A single view that lays the month out like layers of sediment: fixed costs at the bottom, flexible spending above, and what is left at the top. Tapping a layer opens its transactions.',
-              'Data stays on the device. There is no account, and an export button for anyone who wants to leave.'
-            ],
-            points: [
-              'No sign-up, no tracking, data stored locally',
-              'Keyboard-friendly transaction entry',
-              'Plain-language monthly summary'
-            ]
-          },
-          {
-            heading: 'What changed',
-            body: [
-              'It is the tool I use every week. Friends who tried it said the layered view was the first budget chart they understood without a legend.'
+              'Inventory platform with clearer stock visibility',
+              'Automation for repetitive workflows',
+              'Less waste and less manual effort'
             ]
           }
         ]
@@ -402,9 +363,9 @@
     const facts = [
       ['Role', p.role],
       ['Year', p.year],
-      ['Team', p.team],
-      ['Built with', p.stack]
-    ];
+      ['Organisation', p.org],
+      ['Focus', p.focus]
+    ].filter(function (f) { return f[1]; });
     return '' +
       '<article class="case">' +
         '<a class="back" href="#/">All work</a>' +

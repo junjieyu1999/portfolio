@@ -41,7 +41,7 @@ Open `script.js` and edit the `SITE` object:
 
 To add a project, copy an existing entry in `projects` and change the fields. The `slug` becomes the web address (`#/work/your-slug`), so use lowercase letters and hyphens. Leave `live` or `repo` as an empty string `''` to hide that button. New projects appear in the sidebar and on the home page automatically.
 
-The sample projects are placeholders. Replace their text, links and details with your own work.
+The content is prefilled from a resume. Add a `live` or `repo` link to a project to show its buttons, and expand the project stories as you see fit.
 
 To change the colours of the whole site, edit the variables at the top of `styles.css` (`--peat` for the sidebar, `--lichen` for the page, `--ochre` for accents).
 
