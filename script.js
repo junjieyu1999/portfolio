@@ -191,7 +191,10 @@
             points: [
               'Led product discovery and stakeholder communication',
               'Translated business needs into requirements and feature priorities',
-              'Presented iterative demonstrations to the client'
+              'Presented iterative demonstrations to the client',
+              'Designed the database schema and git hub version control workflow for the engineering team',
+              'Designed the AI architecture and prompt engineering for the platform including guardrails and RAG (retrieval-augmented generation) for the model used'
+
             ]
           },
           {
@@ -227,12 +230,14 @@
           {
             heading: 'What I built',
             body: [
-              'I developed an interactive system that visualises Starlink satellite coverage and capabilities, so planning decisions can be based on data. I worked with international stakeholders throughout development.'
+              'I developed an interactive system that visualises Starlink satellite coverage and capabilities, so planning decisions can be based on data. I worked with many international stakeholders throughout development.'
             ],
             points: [
               'Interactive visualisation of coverage and capabilities',
               'Built to support data-driven operational planning',
-              'Developed in collaboration with stakeholders from different countries'
+              'Developed in collaboration with stakeholders from different countries',
+              'Replaced a fragmented, Excel-based process with a single source of truth',
+              'Conducted testing and user acceptance testing with stakeholders to ensure the system met their needs'
             ]
           }
         ]
@@ -307,7 +312,8 @@
             points: [
               'Inventory platform with clearer stock visibility',
               'Automation for repetitive workflows',
-              'Less waste and less manual effort'
+              'Less waste and less manual effort',
+              'Operated mainly for RPA (robotic process automation) and workflow automation'
             ]
           }
         ]
