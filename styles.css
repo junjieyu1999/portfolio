@@ -458,3 +458,24 @@ h1:focus { outline: none; }
 .medal { font-family: var(--font-ui); display: inline-block; padding: .25rem .8rem; border-radius: 4px; border: 1.5px solid var(--moss); color: var(--moss-deep); font-size: .9375rem; font-weight: 500; }
 .medal.gold { background: var(--ochre); border-color: var(--ochre); color: var(--peat); }
 .medal.bronze { background: var(--clay); border-color: var(--clay); color: #fff; }
+
+.sportpage .lead { margin-top: .6rem; max-width: 40rem; font-family: var(--font-read); font-size: 1.1rem; line-height: 1.65; }
+.shot { margin: 0; }
+.shotbox { position: relative; width: 100%; overflow: hidden; border-radius: 4px; background: var(--moss-deep); }
+.shotbox img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block; }
+.hero-shot { margin-top: 2.25rem; }
+.action-shot { margin-top: 2.5rem; max-width: 38rem; }
+.pillars { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 2rem 2.5rem; margin-top: 1.75rem; }
+.pillar { border-top: 2px solid var(--moss); padding-top: .85rem; }
+.pillar:nth-child(2) { border-top-color: var(--ochre); }
+.pillar:nth-child(3) { border-top-color: var(--clay); }
+.pillar:nth-child(4) { border-top-color: var(--moss-deep); }
+.pillar:nth-child(5) { border-top-color: var(--ochre-ink); }
+.pillar h3 { font-size: 1.2rem; }
+.pillar p { margin-top: .6rem; font-family: var(--font-read); font-size: 1.05rem; line-height: 1.6; }
+.pillar .atwork { font-family: var(--font-ui); font-size: .9375rem; line-height: 1.5; color: var(--muted); }
+.pillar .atwork span { display: block; margin-bottom: .1rem; font-weight: 500; color: var(--moss-deep); }
+.prsplit { margin-top: clamp(2.5rem, 5vw, 3.5rem); align-items: start; grid-template-columns: minmax(0, 1fr) minmax(0, .6fr); }
+.prsplit .prose p + p { margin-top: 1rem; }
+@media (max-width: 45rem) { .pillars { grid-template-columns: 1fr; } .prsplit .shot { max-width: 22rem; } }
+@media (max-width: 55rem) { .prsplit { grid-template-columns: 1fr; } }

@@ -110,11 +110,51 @@
       }
     ],
 
-    /* The Sports page. Add or edit games here; result can be 'Gold', 'Bronze', 'Silver' or any short text. */
+    /* The Sports page. Add or edit games, pillars and photos here. */
     sport: {
       title: 'Sports',
-      intro: 'Water polo is the sport I have played for Singapore, and the one I now coach. Here are the games I have represented Singapore at, and where the sport sits in my life today.',
+      intro: 'I am a high performance athlete. I have represented Singapore in water polo at the SEA Games and the Asian Games, and the sport has shaped how I work: calm under pressure, careful with my time, competitive, and always a team player.',
       team: 'Singapore National Water Polo',
+      hero: { image: 'wp1-web.jpg', alt: 'The Singapore water polo team lined up at the poolside in front of a stand of supporters waving Singapore flags', pos: '50% 72%', caption: 'With the Singapore team and our supporters at the 2023 SEA Games.' },
+      lead: 'Training and competing at national level is a full-time discipline on top of everything else. These are the habits it built, and where they show up in my work.',
+      pillars: [
+        {
+          title: 'Performing under pressure',
+          body: 'Finals, packed stands and a running clock leave no room to freeze. I learned to stay composed when a game is tight, to make the next decision well instead of dwelling on the last one, and to reset quickly after a mistake.',
+          atWork: 'Client demos, tight deadlines and stakeholder meetings feel familiar, and I keep a clear head when plans change.'
+        },
+        {
+          title: 'Managing my time',
+          body: 'Squad training, recovery, studies and everything else compete for the same hours. Being a national athlete taught me to plan ahead, protect what matters most and commit fully to whatever I am doing at that moment.',
+          atWork: 'I prioritise by value and deadline, and I hold myself to the dates I commit to.'
+        },
+        {
+          title: 'Competitive, and a team player',
+          body: 'I compete to win, and I know that a team wins together. Sometimes being a team player means taking a step back when a teammate is better in that moment, and backing them fully. I would rather help the team succeed than protect my own spot.',
+          atWork: 'I give credit freely, back the strongest idea in the room, and keep the team’s goal ahead of my own.'
+        },
+        {
+          title: 'Being the best version of myself',
+          body: 'Competing against the best in the region means measuring myself against my own standard, not only the scoreboard. I look for what I can improve every day, in training and in how I prepare.',
+          atWork: 'I ask for feedback, work on my weak points and keep raising the standard of what I deliver.'
+        },
+        {
+          title: 'Perseverance',
+          body: 'There were long seasons of early mornings, hard losses and setbacks before the results came. The medals sit on top of years of showing up when it was difficult, and I learned that progress is built from those days.',
+          atWork: 'I stay with hard problems and long projects until they are done properly.'
+        }
+      ],
+      pr: {
+        title: 'Speaking for the team',
+        paras: [
+          'Representing Singapore comes with a public side. I have been media-trained, and I know how to speak in public, stay on message and give measured, professional answers when someone puts a microphone in front of me.',
+          'That experience gives me an ease in front of an audience, whether it is a room of stakeholders, a client presentation or a team briefing. I know how to listen to the question, stay calm and say what matters clearly.'
+        ],
+        image: 'wp2-web.jpg',
+        alt: 'Yu Jun Jie sitting on the grass with his SEA Games gold medal, in front of a Team Singapore banner for the 32nd SEA Games',
+        caption: 'With my gold medal, in front of a Team Singapore banner for the 32nd SEA Games (5 to 17 May 2023).'
+      },
+      action: { image: 'wp3.jpg', alt: 'A water polo match, with a ball hitting the goal as players contest it', caption: 'Match action. Photo: CNA' },
       games: [
         { year: '2023', name: 'SEA Games', result: 'Gold', kind: 'gold' },
         { year: '2023', name: 'Asian Games', result: 'Represented Singapore', kind: 'plain' },
@@ -758,6 +798,22 @@
       '<section class="page sportpage">' +
         '<h1>' + P.title + '</h1>' +
         '<p class="deck">' + P.intro + '</p>' +
+        '<figure class="shot hero-shot"><div class="shotbox" style="aspect-ratio:16 / 8"><img src="' + P.hero.image + '" alt="' + P.hero.alt + '" style="object-position:' + P.hero.pos + '" onerror="this.remove()"></div>' +
+          '<figcaption class="caption">' + P.hero.caption + '</figcaption></figure>' +
+        '<h2 class="subhead">What high performance taught me</h2>' +
+        '<p class="lead">' + P.lead + '</p>' +
+        '<div class="pillars">' +
+          P.pillars.map(function (p) {
+            return '<article class="pillar"><h3>' + p.title + '</h3><p>' + p.body + '</p>' +
+              '<p class="atwork"><span>At work</span>' + p.atWork + '</p></article>';
+          }).join('') +
+        '</div>' +
+        '<div class="split prsplit">' +
+          '<div class="prose"><h2 class="subhead" style="margin-top:0">' + P.pr.title + '</h2>' +
+            P.pr.paras.map(function (t) { return '<p>' + t + '</p>'; }).join('') + '</div>' +
+          '<figure class="shot"><div class="shotbox" style="aspect-ratio:3 / 4"><img src="' + P.pr.image + '" alt="' + P.pr.alt + '" style="object-position:50% 62%" onerror="this.remove()"></div>' +
+            '<figcaption class="caption">' + P.pr.caption + '</figcaption></figure>' +
+        '</div>' +
         '<h2 class="subhead">Representing Singapore</h2>' +
         '<p class="sport-team">' + P.team + '</p>' +
         '<ol class="timeline" style="list-style:none;padding:0">' +
@@ -768,6 +824,8 @@
               '</li>';
           }).join('') +
         '</ol>' +
+        '<figure class="shot action-shot"><div class="shotbox" style="aspect-ratio:830 / 468"><img src="' + P.action.image + '" alt="' + P.action.alt + '" onerror="this.remove()"></div>' +
+          '<figcaption class="caption">' + P.action.caption + '</figcaption></figure>' +
         '<h2 class="subhead">Beyond the pool</h2>' +
         '<div class="cover" style="aspect-ratio:21 / 9;margin-top:1.25rem;border-radius:4px">' + strata('sport-cover', S.palettes.river, {}) + imgTag(P.image, P.imageAlt, P.imagePos) + '</div>' +
         '<ul class="points sportpoints">' +
