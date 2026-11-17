@@ -322,6 +322,9 @@ h1:focus { outline: none; }
 
 .inline-link { margin-top: 1rem !important; font-family: var(--font-ui) !important; font-size: 1rem !important; }
 .inline-link a { color: var(--moss-deep); font-weight: 500; text-underline-offset: 4px; }
+.inline-link a + a { margin-left: 1.5rem; }
+@media (max-width: 600px) { .inline-link a { display: block; } .inline-link a + a { margin: .5rem 0 0; } }
+.job .sector { margin-top: .1rem; font-family: var(--font-ui); font-size: .9375rem; color: var(--muted); }
 
 /* ------------------------------------------------------------
    Case study
