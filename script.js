@@ -36,47 +36,77 @@
     ],
     background: [
       { group: 'Education', items: ['B.Sc. Information Systems, Singapore Management University (2022 to 2027)', 'Diploma in Bioengineering, Singapore Polytechnic (2017 to 2019)'] },
-      { group: 'Awards', items: ['Singapore National Water Polo, SEA Games gold (2017, 2023)', 'SMU Yip Pin Xiu Sports Scholarship', 'Runner-up, MaritimeONE Digital Challenge'] },
-      { group: 'Languages', items: ['English (fluent)', 'Mandarin (fluent)', 'Spanish (basic)'] }
+      { group: 'Awards', items: ['Singapore National Water Polo: SEA Games gold (2017, 2023), SEA Games bronze (2019), Asian Games (2018, 2023)', 'SMU Yip Pin Xiu Sports Scholarship', 'Runner-up, MaritimeONE Digital Challenge'] },
+      { group: 'Languages', items: ['English (fluent)', 'Mandarin (fluent)', 'Spanish (beginner)'] }
     ],
 
     experience: [
       {
         period: 'Jan to May 2026',
         place: 'Singapore',
-        title: 'Product Manager',
+        title: 'Product Manager and AI Architecture Engineer',
         org: 'Final year capstone with Calibre Financial Advisory',
-        summary: 'Led communication between the client and a multidisciplinary engineering team across the whole product lifecycle.',
+        sector: 'Financial advisory',
+        summary: 'Worked in a team of six to build AdvisorOne, an AI-enabled advisory platform. I led communication between the client and the engineers across the whole product lifecycle.',
         points: [
           'Turned stakeholder discussions into user stories, product requirements and technical deliverables',
           'Prioritised features by balancing user value, technical feasibility and project timelines',
-          'Presented iterative demos and managed stakeholder expectations',
-          'Selected by the project sponsor to continue supporting future development and to mentor the project teams that followed'
-        ]
+          'Ran iterative demos to manage the client’s expectations',
+          'Designed the AI architecture: prompt engineering on an OpenAI model, with a small retrieval-augmented generation (RAG) layer for guardrails and context',
+          'Set up the database design and Git version control for the team',
+          'Submitted the platform to Calibre, and was chosen by the project sponsor to continue supporting development and to mentor the next project team'
+        ],
+        links: [{ label: 'Read the AdvisorOne case study', href: '#/work/advisorone' }]
       },
       {
         period: 'Aug 2025 to Jan 2026',
         place: 'Copenhagen, Denmark',
-        link: { label: 'Read the recommendation letter', href: '#/recommendation' },
         title: 'Software Engineer Intern',
         org: 'United Nations Development Programme (UNDP)',
+        sector: 'International affairs and humanitarian',
         summary: 'Worked with international stakeholders to design software supporting sustainability and internal operations.',
         points: [
+          'Built a satellite service inventory that centralises data for about 170 UNDP offices worldwide. The Denmark office has admin and management access, and every other office has a limited view',
+          'Replaced several versions of Excel sheets, which took a couple of days to finalise, with a dashboard that is one click away',
           'Translated business requirements into functional specifications and UML',
           'Designed stakeholder dashboards in Power BI that improved visibility into operational performance',
-          'Supported IoT data analysis and full software development lifecycle delivery'
+          'Ran testing and user acceptance testing with stakeholders',
+          'Supported IoT data analysis and delivery across the full software development lifecycle'
+        ],
+        links: [
+          { label: 'Read the recommendation letter', href: '#/recommendation' },
+          { label: 'Read the case study', href: '#/work/satellite-service-inventory' }
         ]
+      },
+      {
+        period: 'Jan to May 2024',
+        place: 'Singapore',
+        title: 'Bartender and Software Engineer',
+        org: 'Slippery Slope, a cocktail bar',
+        sector: 'Food and beverage',
+        summary: 'While working shifts behind the bar, I saw how much time manual stock entry took and how many ingredients were wasted. I offered to help the owners for free, and turned it into a university project using their real sales data.',
+        points: [
+          'Acted as the link between the university and the owners, gathered pain points from fellow staff, and met the module’s requirements',
+          'Built a database and inventory system with regression-based sales forecasting to streamline ordering and cut wastage',
+          'Built a tool that flags ingredients nearing expiry and posts to a Telegram chat, so staff know which drinks to push',
+          'Automated daily, weekly and monthly reports for the owners and managers',
+          'Worked peak service behind the bar, prioritising orders and recommending drinks to suit guests’ preferences'
+        ],
+        links: [{ label: 'Read the case study', href: '#/work/slippery-slope' }]
       },
       {
         period: 'Feb to Jul 2023',
         place: 'Singapore',
         title: 'Software Engineer Intern',
         org: 'Sunco Systems',
+        sector: 'Perfumery and e-commerce',
         summary: 'Worked with business users to understand operational pain points before building software to address them.',
         points: [
           'Designed an inventory platform that improved stock visibility and reduced waste',
-          'Developed automation for repetitive workflows, reducing manual effort'
-        ]
+          'Automated warehouse order and inventory workflows with UiPath, reducing manual effort',
+          'Built a .NET application for a perfumery manufacturer that connects hardware to software, cutting the perfumers’ process from about five minutes to three and reducing redundant physical movement'
+        ],
+        links: [{ label: 'Read the case study', href: '#/work/inventory-platform' }]
       }
     ],
 
@@ -99,9 +129,9 @@
         {
           slug: 'aegir-waterpolo',
           name: 'Aegir Waterpolo',
-          role: 'Co-owner',
+          role: 'Co-owner and head coach',
           place: 'Singapore',
-          status: 'Ongoing',
+          status: 'Ongoing since January 2022',
           palette: 'river',
           tone: 'var(--moss)',
           image: 'aegirprofile.jpg',
@@ -110,7 +140,7 @@
           link: { label: 'Visit aegirwaterpolo.com', url: 'https://www.aegirwaterpolo.com/' },
           blurb: 'Moving the club’s payments online and using data to keep more students training with us.',
           summary: 'Aegir Waterpolo is a water polo club in Singapore that I co-own with a business partner. Ownership means weighing the perspectives of many stakeholders and meeting their needs as well as we can, while keeping the business growing.',
-          roles: ['Coach', 'Coach mentor and quality assurance', 'Social media manager (video producer and editor)', 'Digital marketing', 'Data and business analyst'],
+          roles: ['Head coach', 'Coach mentor and quality assurance', 'Social media manager (video producer and editor)', 'Digital marketing', 'Data and business analyst'],
           current: [
             ['Digitalising payments', 'My business partner and I are moving the club’s payment processes online so that we can tackle student drop-off.'],
             ['Keeping students longer', 'I am analysing when students are likely to stop attending, and designing incentives that encourage them to stay.'],
@@ -129,14 +159,14 @@
           imageAlt: 'An artist at work among paintings laid out on a studio floor',
           imagePos: '50% 72%',
           link: { label: 'Visit junjiestudio.com', url: 'https://junjiestudio.com' },
-          blurb: 'Launching a monthly postcard club in January 2027, with ten people already on the waiting list.',
+          blurb: 'Launching a monthly postcard club in January 2027, with fifteen people already on the waiting list.',
           summary: 'Junjie Studio is my own digital art studio. I disliked how exclusive and hidden away art can feel, so I built an online studio that visitors can walk through as if they were standing in a physical space. The studio opened in June 2026.',
           roles: ['Painter', 'Social media manager', 'Business development', 'Administration'],
           current: [
             ['A monthly postcard club', 'I am starting a snail mail postcard club on a monthly subscription. Each month, subscribers receive a printed copy of one of my artworks.'],
             ['Places I have travelled to', 'Each postcard shows a place I have visited, painted in my style, with a short story and my recommendations for what to do there.'],
             ['Logistics and numbers', 'I am working out domestic and international shipping, and calculating breakeven points and the return on my investment.'],
-            ['Waiting list', 'Ten people have already joined the waiting list ahead of the January launch.']
+            ['Waiting list', 'Fifteen people have already joined the waiting list ahead of the January launch.']
           ]
         }
       ]
@@ -179,36 +209,37 @@
         palette: 'moss',
         summary: 'An AI-powered financial advisory platform designed to improve advisor workflow and give managers better insight.',
         tags: ['AI product', 'Financial services'],
-        role: 'Product Manager',
+        role: 'Product Manager and AI Architecture Engineer',
         org: 'Calibre Financial Advisory (final year capstone)',
-        focus: 'Product management, AI',
+        team: 'Team of six',
+        focus: 'Product management, AI architecture',
         live: '',
         repo: '',
         story: [
           {
             heading: 'The brief',
             body: [
-              'AdvisorOne was my final year capstone with Calibre Financial Advisory: an AI-enabled platform meant to improve how advisors work and to give managers better insight. As product manager, I led product discovery and kept the client and a multidisciplinary engineering team talking to each other throughout.'
+              'AdvisorOne was my final year capstone with Calibre Financial Advisory: an AI-enabled platform meant to improve how advisors work and to give managers better insight. As product manager and AI architecture engineer on a team of six, I led product discovery and kept the client and the engineers talking to each other throughout.'
             ]
           },
           {
             heading: 'What I did',
             body: [
-              'I ran stakeholder discussions and turned business goals into user stories, product requirements and technical deliverables. I prioritised features by weighing user value, technical feasibility and project timelines, and presented working demos at each iteration to keep expectations aligned.'
+              'I ran stakeholder discussions and turned business goals into user stories, product requirements and technical deliverables. I prioritised features by weighing user value, technical feasibility and project timelines, and presented working demos at each iteration to keep expectations aligned.',
+              'On the technical side, I designed the AI architecture. It uses prompt engineering on an OpenAI model, together with a small retrieval-augmented generation (RAG) layer that provides guardrails and context.'
             ],
             points: [
               'Led product discovery and stakeholder communication',
               'Translated business needs into requirements and feature priorities',
               'Presented iterative demonstrations to the client',
-              'Designed the database schema and git hub version control workflow for the engineering team',
-              'Designed the AI architecture and prompt engineering for the platform including guardrails and RAG (retrieval-augmented generation) for the model used'
-
+              'Designed the database schema and the GitHub version control workflow for the engineering team',
+              'Designed the AI architecture, including prompt engineering, guardrails and RAG'
             ]
           },
           {
             heading: 'What came of it',
             body: [
-              'The project sponsor selected me to continue supporting future development and to mentor the project teams that followed.'
+              'The platform was submitted to Calibre at the end of the project. The project sponsor selected me to continue supporting future development and to mentor the project teams that followed.'
             ]
           }
         ]
@@ -221,7 +252,7 @@
         title: 'Satellite Service Inventory',
         year: '2025',
         palette: 'river',
-        summary: 'An interactive system that visualises Starlink satellite coverage and capabilities to support operational planning at the UNDP.',
+        summary: 'An interactive system that visualises Starlink satellite coverage and capabilities across about 170 UNDP offices, to support operational planning.',
         tags: ['Data visualisation', 'International development'],
         role: 'Software Engineer Intern',
         org: 'United Nations Development Programme (UNDP)',
@@ -238,14 +269,22 @@
           {
             heading: 'What I built',
             body: [
-              'I developed an interactive system that visualises Starlink satellite coverage and capabilities, so planning decisions can be based on data. I worked with many international stakeholders throughout development.'
+              'I developed an interactive system that visualises Starlink satellite coverage and capabilities, so planning decisions can be based on data. I worked with many international stakeholders throughout development.',
+              'The system centralises data for about 170 UNDP offices worldwide. Only the Denmark office has admin and management access, and every other office has a limited view.'
             ],
             points: [
               'Interactive visualisation of coverage and capabilities',
+              'One central source for about 170 offices, with role-based access',
+              'Replaced a fragmented, Excel-based process with a single source of truth',
               'Built to support data-driven operational planning',
               'Developed in collaboration with stakeholders from different countries',
-              'Replaced a fragmented, Excel-based process with a single source of truth',
-              'Conducted testing and user acceptance testing with stakeholders to ensure the system met their needs'
+              'Testing and user acceptance testing with stakeholders to make sure the system met their needs'
+            ]
+          },
+          {
+            heading: 'What changed',
+            body: [
+              'Teams used to work from several versions of Excel sheets, which took a couple of days to finalise. The same information is now on a dashboard that is one click away.'
             ]
           }
         ]
@@ -293,6 +332,53 @@
         ]
       },
       {
+        slug: 'slippery-slope',
+        place: 'Singapore',
+        title: 'Slippery Slope inventory system',
+        year: '2024',
+        palette: 'bark',
+        summary: 'An inventory and reporting system for a cocktail bar near Maxwell. It forecasts sales, tracks ingredients and nudges staff to use stock that is close to expiry.',
+        tags: ['Inventory', 'Automation'],
+        role: 'Bartender and Software Engineer',
+        org: 'Slippery Slope (cocktail bar)',
+        focus: 'Forecasting, inventory, Telegram automation',
+        live: '',
+        repo: '',
+        story: [
+          {
+            heading: 'How it started',
+            body: [
+              'I was working shifts as a bartender when I noticed how long manual stock entry took, and how many ingredients went to waste. I brought it up with the owners and offered to help for free, in exchange for real sales data that I could use for a project in one of my university modules.',
+              'The module did not require an external company, and a makeshift project would have been easy. I chose a real one to make it more interesting.'
+            ]
+          },
+          {
+            heading: 'Working between two sides',
+            body: [
+              'I acted as the link between the university and the owners. I collected pain points from the other staff, and made sure the project still met the school’s requirements.'
+            ]
+          },
+          {
+            heading: 'What I built',
+            body: [
+              'A database and inventory system with regression-based sales forecasting, to streamline ordering and cut wastage. Based on current stock, the system updates a Telegram chat and tells staff which drinks to push, because the ingredients in them are nearing their expiry dates.'
+            ],
+            points: [
+              'Regression-based sales forecasting to guide ordering',
+              'Ingredient tracking with expiry alerts in a Telegram chat',
+              'Daily, weekly and monthly reports for the owners and managers, covering total sales, best sellers and the top-selling employee',
+              'A list of ingredients running low, with the vendor to contact for the next order'
+            ]
+          },
+          {
+            heading: 'What changed',
+            body: [
+              'The bar manages its ingredients better, so less goes to waste and costs are lower.'
+            ]
+          }
+        ]
+      },
+      {
         slug: 'inventory-platform',
         place: 'Singapore',
         image: 'suncosystemprofile-circle.png',
@@ -301,11 +387,11 @@
         title: 'Inventory platform',
         year: '2023',
         palette: 'clay',
-        summary: 'An inventory platform and workflow automations for Sunco Systems that improved stock visibility and reduced waste.',
+        summary: 'An inventory platform and automations for Sunco Systems, including a .NET application that cut a perfumery manufacturing process from five minutes to three.',
         tags: ['Inventory', 'Automation'],
         role: 'Software Engineer Intern',
         org: 'Sunco Systems',
-        focus: 'Inventory systems, automation',
+        focus: 'Inventory systems, RPA, .NET',
         live: '',
         repo: '',
         story: [
@@ -318,13 +404,20 @@
           {
             heading: 'What I built',
             body: [
-              'The result was an inventory platform that improved stock visibility and reduced waste. I also identified repetitive workflows and developed automation that reduced manual effort and improved operational efficiency.'
+              'The result was an inventory platform that improved stock visibility and reduced waste. I also identified repetitive workflows and developed automation that reduced manual effort and improved operational efficiency.',
+              'In the warehouse, I used UiPath to automate order and inventory workflows. For a perfumery manufacturer, I built a .NET application that connects hardware to software, so that perfumers make fewer redundant movements while manufacturing.'
             ],
             points: [
               'Inventory platform with clearer stock visibility',
-              'Automation for repetitive workflows',
-              'Less waste and less manual effort',
-              'Operated mainly for RPA (robotic process automation) and workflow automation'
+              'UiPath robotic process automation for warehouse orders and inventory',
+              '.NET application connecting manufacturing hardware to software',
+              'Less waste, less manual effort and less physical strain'
+            ]
+          },
+          {
+            heading: 'What changed',
+            body: [
+              'The perfumers’ process dropped from about five minutes to three, with less repeated physical movement.'
             ]
           }
         ]
@@ -512,6 +605,7 @@
       ['Role', p.role],
       ['Year', p.year],
       ['Organisation', p.org],
+      ['Team', p.team],
       ['Location', p.place],
       ['Focus', p.focus]
     ].filter(function (f) { return f[1]; });
@@ -581,9 +675,10 @@
             return '<li class="job">' +
               '<p class="when" style="margin:0">' + j.period + (j.place ? '<span class="where">' + j.place + '</span>' : '') + '</p>' +
               '<div><h2>' + j.title + '</h2><p class="org" style="margin-top:.1rem;font-family:inherit;font-size:1rem">' + j.org + '</p>' +
+              (j.sector ? '<p class="sector">' + j.sector + '</p>' : '') +
               '<p>' + j.summary + '</p>' +
               (j.points.length ? '<ul class="points">' + j.points.map(function (t) { return '<li>' + t + '</li>'; }).join('') + '</ul>' : '') +
-              (j.link ? '<p class="inline-link"><a href="' + j.link.href + '">' + j.link.label + '</a></p>' : '') +
+              (j.links && j.links.length ? '<p class="inline-link">' + j.links.map(function (l) { return '<a href="' + l.href + '">' + l.label + '</a>'; }).join('') + '</p>' : '') +
               '</div></li>';
           }).join('') +
         '</ol>' +
