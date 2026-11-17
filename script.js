@@ -144,16 +144,6 @@
           atWork: 'I stay with hard problems and long projects until they are done properly.'
         }
       ],
-      pr: {
-        title: 'Speaking for the team',
-        paras: [
-          'Representing Singapore comes with a public side. I have been media-trained, and I know how to speak in public, stay on message and give measured, professional answers when someone puts a microphone in front of me.',
-          'That experience gives me an ease in front of an audience, whether it is a room of stakeholders, a client presentation or a team briefing. I know how to listen to the question, stay calm and say what matters clearly.'
-        ],
-        image: 'wp2-web.jpg',
-        alt: 'Yu Jun Jie sitting on the grass with his SEA Games gold medal, in front of a Team Singapore banner for the 32nd SEA Games',
-        caption: 'With my gold medal, in front of a Team Singapore banner for the 32nd SEA Games (5 to 17 May 2023).'
-      },
       action: { image: 'wp3.jpg', alt: 'A water polo match, with a ball hitting the goal as players contest it', caption: 'Match action. Photo: CNA' },
       games: [
         { year: '2023', name: 'SEA Games', result: 'Gold', kind: 'gold' },
@@ -807,12 +797,6 @@
             return '<article class="pillar"><h3>' + p.title + '</h3><p>' + p.body + '</p>' +
               '<p class="atwork"><span>At work</span>' + p.atWork + '</p></article>';
           }).join('') +
-        '</div>' +
-        '<div class="split prsplit">' +
-          '<div class="prose"><h2 class="subhead" style="margin-top:0">' + P.pr.title + '</h2>' +
-            P.pr.paras.map(function (t) { return '<p>' + t + '</p>'; }).join('') + '</div>' +
-          '<figure class="shot"><div class="shotbox" style="aspect-ratio:3 / 4"><img src="' + P.pr.image + '" alt="' + P.pr.alt + '" style="object-position:50% 62%" onerror="this.remove()"></div>' +
-            '<figcaption class="caption">' + P.pr.caption + '</figcaption></figure>' +
         '</div>' +
         '<h2 class="subhead">Representing Singapore</h2>' +
         '<p class="sport-team">' + P.team + '</p>' +
