@@ -334,6 +334,9 @@
       {
         slug: 'slippery-slope',
         place: 'Singapore',
+        image: 'slipperyslope.jpg',
+        imageAlt: 'Slippery Slope cocktail bar logo',
+        imageFit: 'contain',
         title: 'Slippery Slope inventory system',
         year: '2024',
         palette: 'bark',
