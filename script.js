@@ -27,7 +27,7 @@
     about: [
       'I enjoy solving problems that do not have obvious answers. My work sits where people, business and technology meet. I have collaborated with international stakeholders at the United Nations and led product discussions between clients and developers.',
       'I am studying Information Systems at Singapore Management University, majoring in Business Analytics and Digital Cloud Solutions. Before that I completed a diploma in Bioengineering at Singapore Polytechnic.',
-      'Away from work, I have played water polo for Singapore and won gold at the SEA Games in 2017 and 2023. I also enjoy backpacking through unfamiliar regions and am teaching myself oil painting.'
+      'Away from work, I have played water polo for Singapore and won gold at the SEA Games in 2017 and 2023. I also enjoy backpacking or cycling through unfamiliar regions of the world and am a self-taught oil painter.'
     ],
     skills: [
       { group: 'Technical', tone: 'var(--moss)', items: ['Python', 'Java', 'SQL', 'Power BI', 'Next.js', 'React'] },
