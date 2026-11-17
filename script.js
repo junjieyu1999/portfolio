@@ -110,6 +110,27 @@
       }
     ],
 
+    /* The Sports page. Add or edit games here; result can be 'Gold', 'Bronze', 'Silver' or any short text. */
+    sport: {
+      title: 'Sports',
+      intro: 'Water polo is the sport I have played for Singapore, and the one I now coach. Here are the games I have represented Singapore at, and where the sport sits in my life today.',
+      team: 'Singapore National Water Polo',
+      games: [
+        { year: '2023', name: 'SEA Games', result: 'Gold', kind: 'gold' },
+        { year: '2023', name: 'Asian Games', result: 'Represented Singapore', kind: 'plain' },
+        { year: '2019', name: 'SEA Games', result: 'Bronze', kind: 'bronze' },
+        { year: '2018', name: 'Asian Games', result: 'Represented Singapore', kind: 'plain' },
+        { year: '2017', name: 'SEA Games', result: 'Gold', kind: 'gold' }
+      ],
+      beyond: [
+        ['SMU Yip Pin Xiu Sports Scholarship', 'A sports scholarship from Singapore Management University, where I study Information Systems.'],
+        ['Coaching at Aegir Waterpolo', 'Since January 2022 I have coached students and mentored fellow coaches at the club I co-own, overseeing the quality of training.']
+      ],
+      image: 'aegirprofile.jpg',
+      imageAlt: 'Aegir Waterpolo players gathered at the poolside with their coach',
+      imagePos: '50% 58%'
+    },
+
     contact: {
       note: 'I am interested in product management, technology consulting, and AI and digital transformation work. You can reach me by email or phone.',
       email: 'yujunjie1999@gmail.com',
@@ -731,6 +752,31 @@
       '</section>' + footer();
   }
 
+  function sportView() {
+    const P = S.sport;
+    return '' +
+      '<section class="page sportpage">' +
+        '<h1>' + P.title + '</h1>' +
+        '<p class="deck">' + P.intro + '</p>' +
+        '<h2 class="subhead">Representing Singapore</h2>' +
+        '<p class="sport-team">' + P.team + '</p>' +
+        '<ol class="timeline" style="list-style:none;padding:0">' +
+          P.games.map(function (g) {
+            return '<li class="job">' +
+              '<p class="when" style="margin:0">' + g.year + '</p>' +
+              '<div><h3 class="gname">' + g.name + '</h3><p class="result"><span class="medal ' + g.kind + '">' + g.result + '</span></p></div>' +
+              '</li>';
+          }).join('') +
+        '</ol>' +
+        '<h2 class="subhead">Beyond the pool</h2>' +
+        '<div class="cover" style="aspect-ratio:21 / 9;margin-top:1.25rem;border-radius:4px">' + strata('sport-cover', S.palettes.river, {}) + imgTag(P.image, P.imageAlt, P.imagePos) + '</div>' +
+        '<ul class="points sportpoints">' +
+          P.beyond.map(function (b) { return '<li><strong>' + b[0] + '.</strong> ' + b[1] + '</li>'; }).join('') +
+        '</ul>' +
+        '<div class="actions"><a class="btn ghost" href="#/now">See Aegir Waterpolo</a></div>' +
+      '</section>' + footer();
+  }
+
   function recView() {
     const R = S.recommendation;
     return '' +
@@ -773,6 +819,7 @@
     { key: 'now', label: 'Working on now', href: '#/now' },
     { key: 'about', label: 'About', href: '#/about' },
     { key: 'experience', label: 'Experience', href: '#/experience' },
+    { key: 'sport', label: 'Sports', href: '#/sport' },
     { key: 'recommendation', label: 'UN recommendation', href: '#/recommendation' },
     { key: 'contact', label: 'Contact', href: '#/contact' }
   ];
@@ -857,6 +904,8 @@
       html = aboutView(); title = 'About | ' + S.name; key = 'about';
     } else if (page === 'experience') {
       html = experienceView(); title = 'Experience | ' + S.name; key = 'experience';
+    } else if (page === 'sport') {
+      html = sportView(); title = S.sport.title + ' | ' + S.name; key = 'sport';
     } else if (page === 'contact') {
       html = contactView(); title = 'Contact | ' + S.name; key = 'contact';
     } else if (page === 'work') {

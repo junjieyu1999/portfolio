@@ -448,3 +448,13 @@ h1:focus { outline: none; }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation: none !important; transition-duration: 0s !important; transition-delay: 0s !important; }
 }
+
+
+/* Sports page */
+.sportpage .subhead { font-size: 1.5rem; margin-top: clamp(2.5rem, 5vw, 3.5rem); }
+.sportpage .sport-team { margin-top: .25rem; color: var(--muted); }
+.sportpage .gname { font-size: 1.25rem; }
+.sportpage .result { margin-top: .4rem; }
+.medal { font-family: var(--font-ui); display: inline-block; padding: .25rem .8rem; border-radius: 4px; border: 1.5px solid var(--moss); color: var(--moss-deep); font-size: .9375rem; font-weight: 500; }
+.medal.gold { background: var(--ochre); border-color: var(--ochre); color: var(--peat); }
+.medal.bronze { background: var(--clay); border-color: var(--clay); color: #fff; }
